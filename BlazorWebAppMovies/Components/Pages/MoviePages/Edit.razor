@@ -32,6 +32,13 @@ else
                     <InputDate id="releasedate" @bind-Value="Movie.ReleaseDate" class="form-control" />
                     <ValidationMessage For="() => Movie.ReleaseDate" class="text-danger" />
                 </div>
+
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Rating:</label>
+                    <InputText id="rating" @bind-Value="Movie.Rating" class="form-control" />
+                    <ValidationMessage For="() => Movie.Rating" class="text-danger" />
+                </div>
+
                 <div class="mb-3">
                     <label for="genre" class="form-label">Genre:</label>
                     <InputText id="genre" @bind-Value="Movie.Genre" class="form-control" />
