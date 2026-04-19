@@ -4,11 +4,9 @@
 @inject IDbContextFactory<BlazorWebAppMoviesContext> DbFactory
 @inject NavigationManager NavigationManager
 
-<PageTitle>Create</PageTitle>
+<PageTitle>Create a New Movie</PageTitle>
 
-<h1>Create</h1>
-
-<h2>Movie</h2>
+<h2>New Movie to be Added</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -21,7 +19,7 @@
                 <ValidationMessage For="() => Movie.Title" class="text-danger" /> 
             </div>        
             <div class="mb-3">
-                <label for="releasedate" class="form-label">ReleaseDate:</label> 
+                <label for="releasedate" class="form-label">Release Date:</label> 
                 <InputDate id="releasedate" @bind-Value="Movie.ReleaseDate" class="form-control" /> 
                 <ValidationMessage For="() => Movie.ReleaseDate" class="text-danger" /> 
             </div>        

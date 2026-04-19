@@ -6,19 +6,19 @@
 @inject IDbContextFactory<BlazorWebAppMoviesContext> DbFactory
 @inject NavigationManager NavigationManager
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Movies!!</PageTitle>
 
-<h1>Index</h1>
+<h1>Movies Index</h1>
 
 <p>
     <a href="movies/create">Create New</a>
 </p>
 
 <QuickGrid Class="table" Items="context.Movie">
-    <PropertyColumn Property="movie => movie.Title" />
-    <PropertyColumn Property="movie => movie.ReleaseDate" />
-    <PropertyColumn Property="movie => movie.Genre" />
-    <PropertyColumn Property="movie => movie.Price" />
+    <PropertyColumn Property="movie => movie.Title" Title="Title" />
+    <PropertyColumn Property="movie => movie.ReleaseDate" Title="Release Date" />
+    <PropertyColumn Property="movie => movie.Genre"  Title="Genre" />
+    <PropertyColumn Property="movie => movie.Price" Title="Price" />
 
     <TemplateColumn Context="movie">
         <a href="@($"movies/edit?id={movie.Id}")">Edit</a> |
