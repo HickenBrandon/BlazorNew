@@ -1,5 +1,6 @@
 using BlazorWebAppMovies.Components;
 using Microsoft.EntityFrameworkCore;
+using BlazorWebAppMovies.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BlazorWebAppMoviesContext") ?? throw new InvalidOperationException("Connection string 'BlazorWebAppMoviesContext' not found.");
@@ -15,6 +16,16 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 var app = builder.Build();
+
+// Seed the database. Just set this to false to skip seeding.
+if (true) {
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+
+        SeedData.Initialize(services);
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
